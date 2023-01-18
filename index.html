@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crypto</title>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.5.0/math.min.js"
+      integrity="sha512-CTGbAVWJ6AABEPglq77mqB8mXjBRcmtfnxsISZEnJijuJnwooQTMpqDsuIfoXns5HUoDME1Ka0wZ/sBO2jfwgg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <script defer src="assets/js/script.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <section class="hero">
+      <!-- navigation -->
+      <nav>
+        <div class="nav-wrapper">
+          <a href="/" class="brand-logo">Cry<span>pto</span></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="steg.html">Steganography</a></li>
+            <li><a href="enigma.html">Enigma</a></li>
+            <li><a href="vigenere.html">Vigénere Cipher</a></li>
+            <li><a href="caesar.html">Caesar Cipher</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <h1 class="main-heading">
+        Welcome to <br />
+        The Crypto Portal
+      </h1>
+      <p class="intro-text">
+        Crypto is a cryptography website that aims to provide users with a
+        comprehensive and interactive learning experience in the field of
+        cryptography. The project include several functionalities such as: image
+        steganography, enigma machine simulator, ceaser cipher and vigenere
+        cipher.
+      </p>
+      <img src="assets/images/hero.png" alt="encryption image" />
+
+      <div class="boxes-container">
+        <div class="lime-box">
+          <div class="overlay"></div>
+        </div>
+        <div class="box-2">
+          <ul>
+            <li>Steganography</li>
+            <li>Enigma</li>
+            <li>Hill Cipher</li>
+            <li>Caesar Cipher</li>
+            <li>Vigénere Cipher</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="description">
+      <div class="container">
+        <div class="row">
+          <div class="col s12 m6">
+            <h2 class="headings">Image Steganography</h2>
+            <p class="desc">
+              This is a client-side Javascript tool to steganographically hide
+              plaintext inside the two lower bits of image's pixels. The program
+              correctly hides the first 255 characters in the ASCII table and
+              only works well on devices with larger viewport....
+            </p>
+            <a href="steg.html" class="get-started"
+              >Get Started
+              <span class="a-hover"></span>
+            </a>
+          </div>
+          <div class="col s12 m6">
+            <div class="feature-img">
+              <img src="assets/images/hero.png" alt="encryption image" />
+            </div>
+          </div>
+        </div>
+
+        <div class="four-rem-space"></div>
+
+        <div class="row">
+          <div class="col s12 m6">
+            <div class="feature-img left">
+              <img src="assets/images/hero.png" alt="encryption image" />
+            </div>
+          </div>
+          <div class="col s12 m6 right">
+            <h2 class="headings">Enigma Machine</h2>
+            <p class="desc">
+              This is a client-side Javascript enigma machine simulator. The use
+              can chooose any three rotors from the five
+              <code>(I - V)</code> and can also choose any reflector between
+              <code>A, B or C</code>. The default rotors are rotors (I - III)
+              and the default reflector is reflector B....
+            </p>
+            <a href="enigma.html" class="get-started"
+              >Get Started
+              <span class="a-hover"></span>
+            </a>
+          </div>
+        </div>
+
+        <div class="four-rem-space"></div>
+
+        <div class="row">
+          <div class="col s12 m6">
+            <h2 class="headings">Vigénere Cipher</h2>
+            <p class="desc">
+              This is a client-side Javascript tool to encrypt plaintext using
+              the Vigénere Cipher. The default key is <code>CRYPTO</code> and is
+              the one that is used in all cases where the key is not explicitly
+              set. Can select whether to show only letters and hide other...
+            </p>
+            <a href="vigenere.html" class="get-started"
+              >Get Started
+              <span class="a-hover"></span>
+            </a>
+          </div>
+          <div class="col s12 m6">
+            <div class="feature-img">
+              <img src="assets/images/hero.png" alt="encryption image" />
+            </div>
+          </div>
+        </div>
+
+        <div class="four-rem-space"></div>
+
+        <div class="row">
+          <div class="col s12 m6">
+            <div class="feature-img left">
+              <img src="assets/images/hero.png" alt="encryption image" />
+            </div>
+          </div>
+          <div class="col s12 m6 right">
+            <h2 class="headings">Caesar Cipher</h2>
+            <p class="desc">
+              This is a client-side Javascript tool to encrypt plaintext using
+              the Caeasar Cipher. The default key is <code>3</code> and is the
+              one that is used in the event of an error with inputted key. Can
+              select whether to show only letters and hide other characters
+              or...
+            </p>
+            <a href="caesar.html" class="get-started"
+              >Get Started
+              <span class="a-hover"></span>
+            </a>
+          </div>
+        </div>
+
+        <div class="four-rem-space"></div>
+      </div>
+    </section>
+
+    <!-- <input
+      type="file"
+      name="cover-image"
+      id="cover-image"
+      accept="image/*"
+      onchange="readImageURL(this)"
+    />
+
+    <canvas id="canvas-image-cover" width="200" height="200"></canvas>
+
+    <canvas id="canvas-image-output" width="200" height="200"></canvas> -->
+    <footer>
+      <p>
+        Made with &nbsp; <span><i class="fa-solid fa-heart"></i></span> &nbsp;by
+        Lee Mabhena
+      </p>
+    </footer>
+  </body>
+</html>

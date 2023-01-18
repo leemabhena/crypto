@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crypto</title>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.5.0/math.min.js"
+      integrity="sha512-CTGbAVWJ6AABEPglq77mqB8mXjBRcmtfnxsISZEnJijuJnwooQTMpqDsuIfoXns5HUoDME1Ka0wZ/sBO2jfwgg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+      <!--
+      Compiled
+      and
+      minified
+      JavaScript
+      --
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <script defer type="module" src="assets/js/enigma-script.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo">Cry<span>pto</span></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="steg.html">Steganography</a></li>
+          <li><a href="enigma.html">Enigma</a></li>
+          <li><a href="vigenere.html">Vigénere Cipher</a></li>
+          <li><a href="caesar.html">Caesar Cipher</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="steg-hero">
+      <div class="container">
+        <h1>Enigma Machine Simulator</h1>
+        <p class="heading-desc">Encrypt text using enigma machine...</p>
+        <hr />
+        <p class="instr">
+          This is a client-side Javascript enigma machine simulator. The use can
+          chooose any three rotors from the five <code>(I - V)</code> and can
+          also choose any reflector between <code>A, B or C</code>. The default
+          rotors are rotors (I - III) and the default reflector is reflector B.
+          The user can also set up the key of the machine with 1 corresponding
+          to A, 2 to B, ..., 26 to Z. The default configuration is
+          <code>LEE</code>. The user can also change the ring settings, the
+          default is, <code>AAA or (111)</code> which doesn't change the rotor
+          turnover notches. The user can also change the plugboard settings,
+          note the format should be as follows: <code>AB CB</code> which means A
+          is swapped with B and C is swapped with D, the ordering of the two
+          does not matter. In case of any error, the default settings are used
+          for encryption. When decryting dont forget to make sure the settings
+          are set as they were during encryption,
+        </p>
+
+        <div class="settings">
+          <h3 class="setting-heading">Settings</h3>
+          <div class="row">
+            <div class="col s12 m3">
+              <div class="reflector">
+                <label for="reflector">Reflector</label>
+                <select id="reflector">
+                  <option value="A">A</option>
+                  <option value="B" selected>B</option>
+                  <option value="C">C</option>
+                </select>
+              </div>
+            </div>
+            <div class="col s12 m6">
+              <div class="rotors">
+                <table>
+                  <tr>
+                    <td>Rotor 1</td>
+                    <td>Position</td>
+                    <td>Ring</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <select id="rotor1">
+                        <option value="0" selected>I</option>
+                        <option value="1">II</option>
+                        <option value="2">III</option>
+                        <option value="3">IV</option>
+                        <option value="4">V</option>
+                      </select>
+                    </td>
+                    <td>
+                      <input type="number" class="keys" id="key1" value="12" />
+                      <span class="char"></span>
+                    </td>
+                    <td>
+                      <input type="number" class="rings" id="ring1" value="1" />
+                      <span class="char"></span>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>Rotor 2</td>
+                    <td>Position</td>
+                    <td>Ring</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <select id="rotor2">
+                        <option value="0">I</option>
+                        <option value="1" selected>II</option>
+                        <option value="2">III</option>
+                        <option value="3">IV</option>
+                        <option value="4">V</option>
+                      </select>
+                    </td>
+                    <td>
+                      <input
+                        type="number"
+                        class="keys"
+                        id="key2"
+                        value="5"
+                        min="1"
+                        max="26"
+                      />
+                      <span class="char"></span>
+                    </td>
+                    <td>
+                      <input
+                        type="number"
+                        class="rings"
+                        id="ring2"
+                        value="1"
+                        min="1"
+                        max="26"
+                      />
+                      <span class="char"></span>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>Rotor 3</td>
+                    <td>Position</td>
+                    <td>Ring</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <select id="rotor3">
+                        <option value="0">I</option>
+                        <option value="1">II</option>
+                        <option value="2" selected>III</option>
+                        <option value="3">IV</option>
+                        <option value="4">V</option>
+                      </select>
+                    </td>
+                    <td>
+                      <input
+                        type="number"
+                        class="keys"
+                        id="key3"
+                        value="5"
+                        min="1"
+                        max="26"
+                      />
+                      <span class="char"></span>
+                    </td>
+                    <td>
+                      <input type="number" class="rings" id="ring3" value="1" />
+                      <span class="char"></span>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div class="col s12 m3">
+              <div class="plugboard">
+                <label for="plugboard">Plugboard</label>
+                <input type="text" id="plugboard" value="AR GK OX" />
+              </div>
+              <div class="update-container">
+                <button id="update" class="enigma--btn">Update</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-container">
+          <div class="row">
+            <div class="col s12 m6 no-pd">
+              <p class="enigma-txt-p">Type text below:</p>
+              <textarea cols="30" rows="10" id="enigma-text"></textarea>
+              <button class="enigma--btn" id="encrypt-btn">Encrypt</button>
+            </div>
+            <div class="col s12 m6">
+              <p class="enigma-txt-p">Output text:</p>
+              <div id="display-text"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+      <p>
+        Made with &nbsp; <span><i class="fa-solid fa-heart"></i></span> &nbsp;by
+        Lee Mabhena
+      </p>
+    </footer>
+  </body>
+</html>

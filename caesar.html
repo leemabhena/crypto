@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Caesar Cipher</title>
+
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <script defer src="assets/js/caesar.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo">Cry<span>pto</span></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="steg.html">Steganography</a></li>
+          <li><a href="enigma.html">Enigma</a></li>
+          <li><a href="vigenere.html">Vigénere Cipher</a></li>
+          <li><a href="caesar.html">Caesar Cipher</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="steg-hero">
+      <div class="container">
+        <h1>Caesar Cipher</h1>
+        <p class="heading-desc">Encrypt text using substitution...</p>
+        <hr />
+        <p class="instr">
+          This is a client-side Javascript tool to encrypt plaintext using the
+          Caeasar Cipher. The default key is <code>3</code> and is the one that
+          is used in the event of an error with inputted key. Can select whether
+          to show only letters and hide other characters or show all characters.
+          Note characters which are not letters are not encoded in any way.
+          Select whether to encode or decode the text below.
+        </p>
+        <div class="encrypt-buttons">
+          <div class="active-btn sh">Encode</div>
+          <div class="sh">Decode</div>
+        </div>
+
+        <br />
+        <div class="input-field inline key-box">
+          <input
+            id="email_inline"
+            type="number"
+            class="validate"
+            required
+            value="3"
+          />
+          <label for="email_inline">Key</label>
+          <span
+            class="helper-text"
+            data-error="Key should be a number"
+            data-success="Valid Key"
+            >Key should be a number</span
+          >
+        </div>
+
+        <div class="show-punctuation input-field inline">
+          <select name="" id="punctuation">
+            <option value="show">Show everything</option>
+            <option value="hide">Show only letters</option>
+          </select>
+          <label for="punctuation">Show / Hide non-letter characters</label>
+        </div>
+
+        <div class="encryption-box">
+          <div class="row">
+            <div class="col s12 m6 no-pd">
+              <p class="input-p">Enter plaintext below</p>
+              <textarea
+                name="plaintext"
+                id="ceasar-plain"
+                cols="30"
+                rows="30"
+              ></textarea>
+            </div>
+            <div class="col s12 m6 two-rem-pd">
+              <p class="output-p">Cipher text:</p>
+              <div class="ceaser-cipher"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+      <p>
+        Made with &nbsp; <span><i class="fa-solid fa-heart"></i></span> &nbsp;by
+        Lee Mabhena
+      </p>
+    </footer>
+  </body>
+</html>

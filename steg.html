@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Steganography</title>
+
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <script defer src="assets/js/steganography.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo">Cry<span>pto</span></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="steg.html">Steganography</a></li>
+          <li><a href="enigma.html">Enigma</a></li>
+          <li><a href="vigenere.html">Vigénere Cipher</a></li>
+          <li><a href="caesar.html">Caesar Cipher</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="steg-hero">
+      <div class="container">
+        <h1>Image Steganography</h1>
+        <p class="heading-desc">Hide text inside other images...</p>
+        <hr />
+        <p class="instr">
+          This is a client-side Javascript tool to steganographically hide
+          plaintext inside the two lower bits of image's pixels. The program
+          correctly hides the first 255 characters in the ASCII table and only
+          works well on devices with larger viewport. May produce wrong results
+          if image passed is transparent. Select whether to hide or show the
+          text below. The images are processed as being
+          <code>(300px by 300px)</code>, thus a total of
+          <code>90000 - 1</code>
+          characters can be hidden per each image.
+        </p>
+        <div class="encrypt-buttons">
+          <div class="active-btn sh">Hide</div>
+          <div class="sh">Show</div>
+        </div>
+
+        <div class="hide-container">
+          <!-- encryption info -->
+          <div class="hide-row">
+            <div class="row">
+              <div class="col s12 m4 no-pd">
+                <h2 class="encypt-info-heading">
+                  Enter plaintext below
+                  <i class="fa-solid fa-hand-point-down"></i>
+                </h2>
+                <p>Type text to hide in image</p>
+                <textarea name="plaintext" id="plaintext" required> </textarea>
+              </div>
+
+              <div class="col s12 m4">
+                <h2 class="encypt-info-heading">
+                  Upload cover Image <i class="fa-solid fa-hand-point-down"></i>
+                </h2>
+
+                <div class="file-upload">
+                  <input
+                    type="file"
+                    name="cover-img"
+                    id="cover-img"
+                    accept="image/*"
+                    class="hidden"
+                    onchange="readImageURL(this)"
+                  />
+                  <p class="file-p">Need atleast 5 characters!</p>
+                </div>
+
+                <canvas
+                  class="canvas1"
+                  width="300"
+                  height="300"
+                  id="canvas-image-cover"
+                ></canvas>
+              </div>
+              <div class="col s12 m4">
+                <h2 class="encypt-info-heading">Output Image</h2>
+                <p>To download right click on the image</p>
+                <canvas id="canvas-image-output"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <!-- decryption -->
+          <div class="show-row hidden">
+            <div class="row">
+              <div class="col s12 m4 no-pd">
+                <h2 class="encypt-info-heading">
+                  Upload image to decrypt
+                  <i class="fa-solid fa-hand-point-down"></i>
+                </h2>
+                <input
+                  type="file"
+                  name="cover-img"
+                  id="output-img"
+                  accept="image/*"
+                  onchange="readImageURL(this)"
+                />
+                <canvas id="canvas-show-text" width="300" height="300"></canvas>
+              </div>
+              <div class="col s12 m4">
+                <h2 class="encypt-info-heading">
+                  The hidden text is <i class="fa-solid fa-hand-point-down"></i>
+                </h2>
+                <p>The hidden message is...</p>
+                <textarea name="shown-text" id="shown-text" required>
+                </textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+      <p>
+        Made with &nbsp; <span><i class="fa-solid fa-heart"></i></span> &nbsp;by
+        Lee Mabhena
+      </p>
+    </footer>
+  </body>
+</html>
